@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time In A Day</title>
+  <!-- Include p5.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+  <script>
+    let data; // Variable to store CSV data
+    let bars = []; // Array to store bar objects
+    let canvasHeight; // Height of the canvas
+    let scaleValue = 1.0; // Base scale value for easier adjustments
+    let allArrived = false; // Flag to indicate if all bars have arrived
+    let startTime; // Variable to store the start time for the stopwatch
+
+    function preload() {
+      // Load CSV file
+      data = loadTable('dataHoursDay.csv', 'csv', 'header', sortData);
+    }
+
+    function sortData() {
+      data.rows.sort((a, b) => parseFloat(a.get('free hours')) - parseFloat(b.get('free hours')));
+    }
+
+    function setup() {
+      createCanvas(windowWidth, max(windowHeight, 600)); // Set canvas height to at least the height of the window
+      initializeBars(); // Initialize bar positions and speeds
+      calculateCanvasHeight(); // Calculate total height required for bars
+      resizeCanvas(windowWidth, canvasHeight); // Resize canvas to fit all bars
+      startTime = millis(); // Initialize the stopwatch start time
+    }
+
+    function calculateCanvasHeight() {
+      let barHeight = 30 * scaleValue; // Height of each bar
+      let spacing = 5 * scaleValue; // Reduced spacing between bars
+      canvasHeight = bars.length * (barHeight + spacing) + 150 * scaleValue; // Calculate total height including spacing and padding
+    }
+
+    function initializeBars() {
+      if (data) {
+        let startX = 150 * scaleValue; // Starting x-position (moved to the right for country names)
+        let startY = 150 * scaleValue; // Starting y-position (adjusted downward)
+
+        for (let i = 0; i < data.getRowCount(); i++) {
+          let country = data.getRow(i);
+          let freeHours = country.get('free hours');
+          let countryName = country.get('code');
+          // Check if freeHours is valid
+          if (!isNaN(freeHours) && freeHours !== '-') {
+            let freeHoursNumber = parseFloat(freeHours); // Convert string to number
+            let speed = map(freeHoursNumber, 0, 24, 1.5, 0.02); // Adjust speed differences
+            let barHeight = 30 * scaleValue; // Fixed bar height
+            let barColor = color(random(255), random(255), random(255)); // Random color for each bar
+
+            let x = 0; // Start bars from the left
+            let y = startY + i * (barHeight + 5 * scaleValue); // Position each bar below the previous one with spacing
+
+            bars.push({ x, y, barHeight, speed, countryName, barColor, freeHoursNumber, hasArrived: false });
+          }
+        }
+      }
+    }
+
+    function draw() {
+      // Clear the canvas
+      background(255);
+
+      let allArrivedNow = true; // Assume all bars have arrived
+
+      // Draw and move bars
+      textSize(12 * scaleValue); // Set text size for country names
+
+      for (let i = 0; i < bars.length; i++) {
+        let bar = bars[i];
+        
+        if (!bar.hasArrived) {
+          bar.x += bar.speed; // Move the bar based on its speed
+          if (bar.x > width) {
+            bar.hasArrived = true; // Mark bar as arrived
+            bar.x = width; // Keep the bar at the edge
+          }
+        }
+
+        // Check if this bar has arrived
+        if (!bar.hasArrived) {
+          allArrivedNow = false; // If any bar hasn't arrived, set flag to false
+        }
+
+        // Draw the country name
+        fill(bar.barColor);
+        textAlign(RIGHT, CENTER); // Align text to the right and vertically centered
+        text(bar.countryName, 140 * scaleValue, bar.y + bar.barHeight / 2); // Position text to the left of the bars
+
+        // Draw the bar
+        fill(bar.barColor);
+        noStroke();
+        rect(bar.x + 150 * scaleValue, bar.y, 30 * scaleValue, bar.barHeight); // Adjust bar width and starting x-position
+
+        // Draw the free hours on the far right
+        textAlign(LEFT, CENTER); // Align text to the left and vertically centered
+        text(nf(bar.freeHoursNumber, 0, 1), width - 200 * scaleValue, bar.y + bar.barHeight / 2); // Position text to the right of the bars
+      }
+
+      // Display the title for the free hours
+      textSize(16 * scaleValue);
+      fill(0);
+      textAlign(LEFT, CENTER);
+      textStyle(BOLD);
+      text("Not everyone’s day is equally long.", 20 * scaleValue, 50 * scaleValue); // Adjusted upward
+
+      // Display the paragraph texts
+      textSize(15 * scaleValue);
+      textStyle(NORMAL);
+      fill(color(0, 150, 255)); // Blue color for the first paragraph
+      textAlign(LEFT, TOP); // Align text to the left and top
+
+      let textX = 20 * scaleValue;
+      let textY = 90 * scaleValue;
+
+      let paragraphText = "Women across the world dedicate on average 17% of their day to unpaid care work. This means they have less free time. This takes time away from paid work, play and rest. The following visualization depicts the average “length” of a woman’s day around the world. Free hours for paid work, play and sleep, not dedicated to unpaid labor. Source for data: ILO, 2024";
+
+      text(paragraphText, textX, textY, windowWidth - textX * 2, windowHeight - textY);
+
+      // Draw the stopwatch
+      textSize(32);
+      fill(0); // Black color
+      textAlign(RIGHT, TOP);
+      let elapsed = millis() - startTime;
+      let hours = floor(elapsed / 3600000);
+      let minutes = floor((elapsed % 3600000) / 60000);
+      let seconds = floor((elapsed % 60000) / 1000);
+      text(nf(hours, 2) + ':' + nf(minutes, 2) + ':' + nf(seconds, 2), width - 20 * scaleValue, 20 * scaleValue);
+
+      // Update the global flag
+      if (allArrivedNow && !allArrived) {
+        allArrived = true;
+        setTimeout(resetBars, 2000); // Wait 2 seconds before resetting bars
+      }
+    }
+
+    function resetBars() {
+      for (let bar of bars) {
+        bar.x = 0; // Reset bar position to start
+        bar.hasArrived = false; // Reset arrival status
+      }
+      allArrived = false; // Reset global flag
+      startTime = millis(); // Reset the stopwatch start time
+    }
+
+    // Resize canvas when the window is resized
+    function windowResized() {
+      calculateCanvasHeight(); // Recalculate canvas height
+      resizeCanvas(windowWidth, canvasHeight); // Resize canvas to fit all bars
+      background(255); // Clear the background
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

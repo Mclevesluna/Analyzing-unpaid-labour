@@ -90,12 +90,20 @@ Visualizations 1-5 were developed on tableau, while  5 and 6 were developed usin
 
 ## Conclusions
 
-This project underscores the need for policy changes to reduce and redistribute unpaid work. Key actions include:
-- Advocating for paid jobs in the care economy.
-- Encouraging men to share care and domestic responsibilities.
-- Addressing global data gaps and improving ethical data sourcing.
+1**Call for Policy Action: This project highlights the urgent need for policy reforms to mitigate and equitably distribute unpaid work.** Essential actions include:
+Promoting paid employment in the care sector.
+Encouraging equitable sharing of care and domestic duties among all genders.
+Addressing global data inconsistencies and enhancing ethical data collection practices.
+Ethical Data Considerations: One major takeaway involves scrutinizing data ethics. The data collected for this project, like many international datasets, reveals inherent biases. Certain regions and countries are underrepresented, and data coverage varies. While privacy and transparency were upheld, as the data came from government surveys with no personal identifiers, the gaps and disparities in the data call for improved global data practices.
 
-Integrating insights from data feminism, we highlight the importance of emotional and embodied experiences in data analysis to foster empathy and understanding in policymaking.
+2. **Analytical Approach: The project's analysis was exploratory, aiming to provoke thought rather than provide definitive answers.** The approach included:
+Descriptive statistics examining gender differences across regions in subsistence food production, volunteering, and informal care work.
+Trend analysis to observe how these disparities evolved over time, offering a dynamic view of gender inequality. The dashboards in the Annex illustrate these findings.
+
+3. **Integrating Data Feminism:** The importance of incorporating emotional and embodied experiences into data analysis. Emphasizing these dimensions can foster more empathetic and informed policymaking. The necessity of acknowledging and making visible the labor involved in data collection and analysis. This transparency ensures that data-driven decisions are accountable and resonate with the real experiences of the communities they affect.
+
+Interactive elements allow users to explore detailed data and adjust parameters. Although disability considerations were not addressed in this iteration, plans include adding ALT text for accessibility in future updates.
+
 
 ## References
 

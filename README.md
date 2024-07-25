@@ -79,13 +79,14 @@ Interactive elements allow users to explore data, with future plans to include a
 
 Visualizations 1-5 were developed on tableau, while  5 and 6 were developed using P5 and D3 respectively. For visualization 5, xxxxxxxxx was used and for 6 P5 visualization commonly used to represent numbers, it was used it to represent the lenght/speed of womens day in terms of the number of hours they have free from unpaid labor.
 
-### P5 and D3 Visualizations and Stories
-![Global Breakdown: How Many Hours Women Truly Have in Their Day](Images/P5Day.png)
-![Mapping the distributing of unpaid work between sexes](Images/D3Map.png)
-
 ### Tableau Dashboards
-![Dashboards1](/Images/dashboards1.png)
-![Dashboards2](/Images/dashboards2.png)
+![Unpaid Labor Around the World](/images/TableauDashboards.png)
+
+### P5 and D3 Visualizations
+![Global Breakdown: How Many Hours Women Truly Have in Their Day](images/P5Day.png)
+![Global Breakdown: How Many Hours Women Truly Have in Their Day](images/P5Day2.png)
+![Mapping the distributing of unpaid work between sexes](images/D3Map.png)
+
 
 ## Conclusions
 

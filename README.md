@@ -66,12 +66,18 @@ The analysis was exploratory, aiming to pose questions rather than provide defin
 ### Visualizations
 
 Visualizations are categorized to provide:
-- An overview of global unpaid work (Dashboard 1).
-- Trends in informal care work (Dashboard 2).
-- Trends in subsistence food production (Dashboard 3).
-- Additional insights on volunteering and care work (Dashboard 5).
+1) An overview of global unpaid work
+2) Trends in informal care work
+3) Trends in subsistence food production 
+4) Additional insights on volunteering and care work
+5) Global Breakdown: How Many Hours Women Truly Have in Their Day
+6) Mapping the distributing of unpaid work between sexes
 
 Interactive elements allow users to explore data, with future plans to include accessibility features such as ALT text for visually impaired users.
+
+## Process
+
+Visualizations 1-5 were developed on tableau, while  5 and 6 were developed using P5 and D3 respectively. 
 
 ## Conclusions
 
@@ -93,8 +99,5 @@ Integrating insights from data feminism, we highlight the importance of emotiona
 - [UN Women: Forecasting Time Spent in Unpaid Care](https://www.unwomen.org/sites/default/files/2023-10/technical-brief-forecasting-time-spent-in-unpaid-care-and-domestic-work-en.pdf)
 - [UNICEF: Gender Norms and Unpaid Work](https://data.unicef.org/topic/gender/gender-norms-and-unpaid-work/)
 
-## Annexes
 
-1. Screenshots of dashboards.
-2. Screenshots of the data cleaning process.
  

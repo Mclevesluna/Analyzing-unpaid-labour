@@ -1,4 +1,4 @@
-# README
+# Analyzing and Visualizing Unpaid Labor
 
 ## Overview
 
@@ -94,7 +94,6 @@ Integrating insights from data feminism, we highlight the importance of emotiona
 - [HM Government: Unpaid and Unrecognized](https://assets.publishing.service.gov.uk/media/60ae4501d3bf7f7383db35fc/Unpaid-and-Unrecognised1.pdf)
 - [International Labour Organization: Care Economy](https://www.ilo.org/global/topics/care-economy/lang--en/index.htm)
 - [OECD: Redefining Reality](https://www.oecd-forum.org/posts/redefining-reality-the-truth-behind-the-unpaid-care-economy)
-- [Chat GPT (Proofreading)]
 - [Office for National Statistics: Women and Unpaid Work](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/articles/womenshouldertheresponsibilityofunpaidwork/2016-11-10)
 - [UN Women: Forecasting Time Spent in Unpaid Care](https://www.unwomen.org/sites/default/files/2023-10/technical-brief-forecasting-time-spent-in-unpaid-care-and-domestic-work-en.pdf)
 - [UNICEF: Gender Norms and Unpaid Work](https://data.unicef.org/topic/gender/gender-norms-and-unpaid-work/)

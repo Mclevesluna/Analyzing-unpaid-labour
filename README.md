@@ -77,7 +77,7 @@ Interactive elements allow users to explore data, with future plans to include a
 
 ## Process
 
-Visualizations 1-5 were developed on tableau, while  5 and 6 were developed using P5 and D3 respectively. For visualization 5, xxxxxxxxx was used and for 6 P5 visualization commonly used to represent numbers, it was used it to represent the lenght/speed of womens day in terms of the number of hours they have free from unpaid labor.
+Visualizations 1-5 were developed on tableau, while  5 and 6 were developed using P5 and D3 respectively. For visualization 5, GEOcode map to graph the data by country and for 6 P5 visualization commonly used to represent numbers, it was used it to represent the lenght/speed of womens day in terms of the number of hours they have free from unpaid labor.
 
 ### Tableau Dashboards
 ![Unpaid Labor Around the World](/images/TableauDashboards.png)
@@ -90,17 +90,23 @@ Visualizations 1-5 were developed on tableau, while  5 and 6 were developed usin
 
 ## Conclusions
 
-1**Call for Policy Action: This project highlights the urgent need for policy reforms to mitigate and equitably distribute unpaid work.** Essential actions include:
-Promoting paid employment in the care sector.
-Encouraging equitable sharing of care and domestic duties among all genders.
-Addressing global data inconsistencies and enhancing ethical data collection practices.
-Ethical Data Considerations: One major takeaway involves scrutinizing data ethics. The data collected for this project, like many international datasets, reveals inherent biases. Certain regions and countries are underrepresented, and data coverage varies. While privacy and transparency were upheld, as the data came from government surveys with no personal identifiers, the gaps and disparities in the data call for improved global data practices.
+1**Call for Policy Action: This project highlights the urgent need for policy reforms to mitigate and equitably distribute unpaid work.** 
+Essential actions include:
+- Promoting paid employment in the care sector.
+- Encouraging equitable sharing of care and domestic duties among all genders.
+- Addressing global data inconsistencies and enhancing ethical data collection practices.
+- Ethical Data Considerations: One major takeaway involves scrutinizing data ethics. The data collected for this project, like many international datasets, reveals inherent biases. Certain regions and countries are underrepresented, and data coverage varies. While privacy and transparency were upheld, as the data came from government surveys with no personal identifiers, the gaps and disparities in the data call for improved global data practices.
 
-2. **Analytical Approach: The project's analysis was exploratory, aiming to provoke thought rather than provide definitive answers.** The approach included:
-Descriptive statistics examining gender differences across regions in subsistence food production, volunteering, and informal care work.
-Trend analysis to observe how these disparities evolved over time, offering a dynamic view of gender inequality. The dashboards in the Annex illustrate these findings.
+2. **Analytical Approach: The project's analysis was exploratory, aiming to provoke thought rather than provide definitive answers.**
+The approach included:
+- Descriptive statistics examining gender differences across regions in subsistence food production, volunteering, and informal care work.
+- Trend analysis to observe how these disparities evolved over time, offering a dynamic view of gender inequality. The dashboards in the Annex illustrate these findings.
 
-3. **Integrating Data Feminism:** The importance of incorporating emotional and embodied experiences into data analysis. Emphasizing these dimensions can foster more empathetic and informed policymaking. The necessity of acknowledging and making visible the labor involved in data collection and analysis. This transparency ensures that data-driven decisions are accountable and resonate with the real experiences of the communities they affect.
+4. **Integrating Data Feminism:**
+- The importance of incorporating emotional and embodied experiences into data analysis.
+- Emphasizing these dimensions can foster more empathetic and informed policymaking.
+- The necessity of acknowledging and making visible the labor involved in data collection and analysis.
+- This transparency ensures that data-driven decisions are accountable and resonate with the real experiences of the communities they affect.
 
 Interactive elements allow users to explore detailed data and adjust parameters. Although disability considerations were not addressed in this iteration, plans include adding ALT text for accessibility in future updates.
 
